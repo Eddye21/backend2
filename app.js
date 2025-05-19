@@ -1,6 +1,7 @@
 import "dotenv/config.js"
 import morgan from "morgan"
 import express from "express"
+import "dotenv/config.js"
 import __dirname from "./utils.js"
 import cookieParser from "cookie-parser"
 import { engine } from "express-handlebars"
@@ -10,6 +11,8 @@ import dbConnect from "./src/helpers/dbConnect.helper.js"
 //Server settings
 const server = express()
 const PORT = process.env.PORT || 8080
+const connect = await dbConnect(process.env.LINK_DB)
+
 
 //Settings handlebars
 server.engine("handlebars", engine)
@@ -28,4 +31,4 @@ server.use(morgan("dev"))
 server.use("/", indexRouter)
 
 //Server initialize 
-server.listen((PORT), dbConnect)
+server.listen((PORT), connect)
