@@ -11,18 +11,18 @@ import dbConnect from "./src/helpers/dbConnect.helper.js"
 //Server settings
 const server = express()
 const PORT = process.env.PORT || 8080
-const connect = await dbConnect(process.env.LINK_DB)
+const connect = dbConnect(process.env.LINK_DB, PORT)
 
 
 //Settings handlebars
-server.engine("handlebars", engine)
+server.engine("handlebars", engine())
 server.set("view engine", "handlebars")
 server.set("views", __dirname + "/src/views")
 
 //Middlewares
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
-server.use(express.static(__dirname + "/public"))
+server.use(express.static("/public"))
 
 server.use(cookieParser(process.env.SECRET))
 server.use(morgan("dev"))

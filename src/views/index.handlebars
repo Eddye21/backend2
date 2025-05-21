@@ -1,21 +1,10 @@
-{{#if error}}
-    <div class="error">
-        <h2>Error</h2>
-        <p>{{error}}</p>
-    </div>
-{{else}}
-    <h1>Lista de Productos</h1>
-    {{#if products.length}}
-        <div class="products">
-            {{#each products}}
-                <div class="product">
-                    <h3>{{this.title}}</h3>
-                    <p>{{this.description}}</p>
-                    <p>Precio: ${{this.price}}</p>
-                </div>
-            {{/each}}
+
+<section>
+    {{#each products}}
+        <div>
+            <h2>{{products.title}}</h2>
+            <p>{{products.description}}</p>
+            <span>{{products.price}}</span>
         </div>
-    {{else}}
-        <p>No hay productos disponibles</p>
-    {{/if}}
-{{/if}}
+    {{/each}}
+</section>
