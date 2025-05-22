@@ -11,7 +11,7 @@ passport.use(
         { passReqToCallback: true, usernameField: "email" },
         async (req, email, password, done) => {
             try {
-                if (!req.body.city) {
+                if (!req.body.first_name || !req.body.last_name || !req.body.age) {
                     const error = new Error("Invalid Data")
                     error.statusCode = 400
                     throw error
