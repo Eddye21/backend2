@@ -14,7 +14,7 @@ const createToken = (data) => {
     }
 }
 
-const compareToken = () => {
+const compareToken = (token) => {
     try {
         const data = jwt.verify(
             token,
