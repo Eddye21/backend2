@@ -13,7 +13,7 @@ const server = express()
 const PORT = process.env.PORT || 8080
 const connect = async() => {
     await dbConnect(process.env.LINK_DB)
-    console.log(`Server online on port : http://localhost:${PORT}`)
+    console.log(`Server online on port : http://localhost:${port}`)
 }
 
 
