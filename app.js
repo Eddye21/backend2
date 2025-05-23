@@ -1,12 +1,12 @@
 import "dotenv/config.js"
 import morgan from "morgan"
 import express from "express"
-import "dotenv/config.js"
 import __dirname from "./utils.js"
 import cookieParser from "cookie-parser"
 import { engine } from "express-handlebars"
 import indexRouter from "./src/routes/index.router.js"
 import dbConnect from "./src/helpers/dbConnect.helper.js"
+import errorHandler from "./src/middleware/errorHandler.mid.js"
 
 //Server settings
 const server = express()
@@ -28,6 +28,7 @@ server.use(morgan("dev"))
 
 //Endpoint
 server.use("/", indexRouter)
+server.use(errorHandler)
 
 //Server initialize 
 server.listen((PORT), connect)
