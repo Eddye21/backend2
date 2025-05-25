@@ -5,8 +5,9 @@ const viewsRouter = Router()
 
 viewsRouter.get("/", async(req, res) => {
     try {
-        const products = await productManager.readAll()
-        res.status(200).render("index", products)
+        const products = await productManager.readAll() 
+        console.log(products)
+        res.status(200).render("index", {products})
     } catch (error) {
         console.log(error.message)
     }

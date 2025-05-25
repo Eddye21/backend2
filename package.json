@@ -4,7 +4,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch app.js"
+    "dev": "node --watch app.js",
+    "up": "git push https://github.com/Eddye21/backend2.git dev"
   },
   "keywords": [],
   "author": "",

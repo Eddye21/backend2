@@ -40,22 +40,31 @@ const signOutCb = (req, res, next) => {
 
 const forbidden = (req, res, next) => {
     try {
-        const error = new Error("Forbidden")
-        error.statusCode = 403
-        throw error
+        const { method, originalUrl: url} = req
+        return res.status(403).send({message: "Forbidden", method, url})
+    } catch (error) {
+        next(error)
+    }
+}
+
+const badAuthCb = (req, res, next) => {
+    try {
+        const { method, originalUrl: url} = req
+        return res.status(400).send({message: "Bad Auth", method, url})
     } catch (error) {
         next(error)
     }
 }
 
 
-const opts = { session: false }
+const opts = { session: false, failureRedirect: "/api/auth/bad-auth"}
 const optsForbidden = { session: false, failureRedirect: "/api/auth/forbidden" }
 
 //Endpoits
 authRouter.use("/register", passport.authenticate("register", opts), registerCb)
 authRouter.use("/login", passport.authenticate("login", opts), loginCb)
 authRouter.use("/signout", passport.authenticate("user", optsForbidden), signOutCb)
+authRouter.use("/bad-auth", badAuthCb)
 authRouter.use("/forbidden", forbidden)
 
 export default authRouter

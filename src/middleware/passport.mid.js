@@ -40,7 +40,7 @@ passport.use(
             try {
                 let user = await userManager.readBy({ email })
                 if (!user) {
-                    const error = new Error("Invalid Credentials")
+                    const error = new Error("Invalid Credenstials")
                     error.statusCode = 401
                     throw error
                 }

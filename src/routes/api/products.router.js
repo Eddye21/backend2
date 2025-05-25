@@ -1,4 +1,5 @@
-import { response, Router } from "express";
+import { Router } from "express";
+import passport from "../../middleware/passport.mid.js"
 import { productManager } from "../../data/managers/db/mongoDb.manager.js";
 
 const productRouter = Router()
@@ -39,9 +40,11 @@ const putProductCb = async (req, res, next) => {
     }
 }
 
+const optsForbidden = {session: false, failureRedirect: "/api/auth/forbidden"}
+
 //Endpoit
 productRouter.get("/", getProductsCb)
-productRouter.post("/create", postProductCb)
-productRouter.put("/update/:pid", putProductCb)
+productRouter.post("/create", passport.authenticate("admin", optsForbidden),postProductCb)
+productRouter.put("/update/:pid", passport.authenticate("admin", optsForbidden),putProductCb)
 
 export default productRouter
