@@ -21,7 +21,7 @@ server.set("views", __dirname + "/src/views")
 //Middlewares
 server.use(express.json())
 server.use(express.urlencoded({ extended: true }))
-server.use(express.static("/public"))
+server.use(express.static(__dirname + "/public"))
 
 server.use(cookieParser(process.env.SECRET))
 server.use(morgan("dev"))
