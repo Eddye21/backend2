@@ -1,0 +1,31 @@
+<section class="register-conteiner">
+    <div class="register-form">
+        <form action="http://localhost:8080/api/auth/register" method="post">
+            <div class="first_name">
+                <label for="password">First Name</label>
+                <input class="input-first_name" type="text" name="first_name" placeholder="John">
+            </div>
+            <div class="last_name">
+                <label for="password">Last Name</label>
+                <input class="input-last_name" type="text" name="last_name" placeholder="Doe">
+            </div>
+            <div class="age">
+                <label for="password">Age</label>
+                <input class="input-age" type="number" name="age" placeholder="25">
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input class="input-email" type="email" name="email" placeholder="johndoe@email.com">
+            </div>
+            <div class="password">
+                <label for="password">Password</label>
+                <input class="input-password" type="password" name="password" placeholder="password">
+            </div>
+            <button class="register-buttom" type="submit">
+                Register
+            </button>
+        </form>
+    </div>
+</section>
+
+<link rel="stylesheet" href="./css/register.module.css">
