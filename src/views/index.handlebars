@@ -1,11 +1,19 @@
 
-<section>
+<section class="cards-conteiner">
     {{#each products}}
-        <div>
-            <h2>{{title}}</h2>
-            <p>{{description}}</p>
-            <span>{{price}}</span>
-            <p>{{stock}}</p>
+        <div class="cards">
+            <img class="card-img" src="https://cdn.thewirecutter.com/wp-content/media/2023/06/ultrabooks-2048px-0883.jpg" alt="image laptop">
+            <h2 class="card-title">{{title}}</h2>
+            <p class="card-description">{{description}}</p>
+            <div class="price-conteiner">
+                <button class="button-price">
+                    <span class="card-price">{{price}}</span>
+                </button>
+            </div>
         </div>
     {{/each}}
 </section>
+
+<link rel="stylesheet" href="./css/cards.module.css">
+
+
