@@ -4,7 +4,7 @@ const dbConnect = async(link, port) => {
     try {
         await mongoose.connect(link)
         console.log("Database Connected")
-        console.log(`Server online on port : http://localhost:${port}`)
+        console.log(`Server online on port : http://localhost:${port}/login`)
     } catch (error) {
         console.error("Error connecting to database:", error.message)
         throw error

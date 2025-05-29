@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { productManager } from "../../data/managers/db/mongoDb.manager.js";
+import passport from "../../middleware/passport.mid.js"
 
 const viewsRouter = Router()
 
@@ -22,8 +23,10 @@ const registerCb = (req, res) => {
     res.render("register")
 }
 
+const optsForbidden = {session: false, failureRedirect: "/api/auth/forbidden"}
+
 //Endpoit
-viewsRouter.get("/", getProductsCb)
+viewsRouter.get("/", passport.authenticate("admin", optsForbidden),getProductsCb)
 viewsRouter.get("/login", loginCb)
 viewsRouter.get("/register", registerCb)
 
