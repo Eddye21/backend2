@@ -1,10 +1,10 @@
-.register-conteiner{
+.product-conteiner{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.register-form{
+.product-form{
     padding-top: 4rem;
     padding-bottom: 4rem;
     border-radius: 20px;
@@ -12,64 +12,70 @@
     justify-content: center;
     align-items: center;
     width: 50rem;
-    height: 45rem;
-    margin-top: 10rem;
+    height: 60rem;
+    margin-top: 1rem;
     background-color:  #888484;
 }
 
-.email, .password, .first_name, .last_name, .age{
+.title, .description, .thumbnail, .price, .stock, .code{
     display: flex;
     flex-direction: column;
     padding-bottom: 3rem;
 }
 
-.input-email, .input-password, .input-first_name, .input-last_name, .input-age{
+.input-title, .input-description, .input-thumbnail, .input-price, .input-stock, .input-code{
     border-radius: 5px;
     width: 12rem;
-    height: 2rem;
+    height: 3rem;
     margin-top: .9rem;
     background-color: #888484;
     border: 1px solid #888484;
     border-bottom: 1px solid rgb(84, 201, 84);
 }
 
-.input-email::placeholder, .input-email:focus{
+
+.input-title::placeholder, .input-title:focus{
     color: #1e1e1e;
     text-indent: 1rem;
 }
 
-.input-first_name::placeholder, .input-first_name:focus{
+.input-description::placeholder, .input-description:focus{
     color: #1e1e1e;
     text-indent: 1rem;
 }
 
-.input-last_name::placeholder, .input-last_name:focus{
+.input-thumbnail::placeholder, .input-thumbnail:focus{
+    color: #1e1e1e;
+    text-indent: 1rem;
+
+}
+
+.input-price::placeholder, .input-price:focus{
     color: #1e1e1e;
     text-indent: 1rem;
 }
 
-.input-age::placeholder, .input-age:focus{
+.input-stock::placeholder, .input-stock:focus{
     color: #1e1e1e;
     text-indent: 1rem;
 }
 
-.input-password::placeholder, .input-password:focus{
+.input-code::placeholder, .input-code:focus{
     color: #1e1e1e;
     text-indent: 1rem;
 }
 
-.register-buttom{
+.product-buttom{
     border-radius: 10px;
-    width: 7rem;
-    height: 2rem;
+    width: 15rem;
+    height: 3rem;
     margin-bottom: 1rem;
     background-color: aliceblue;
     border: 1px solid rgb(84, 201, 84);
 }
 
-
-.register-buttom:hover{
+.product-buttom:hover{
     background-color: rgb(84, 201, 84);
-    width: 7.2rem;
-    height: 2.2rem;
+    width: 15.2rem;
+    height: 3.2rem;
 }

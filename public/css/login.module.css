@@ -32,12 +32,12 @@
 }
 
 .input-email::placeholder, .input-email:focus{
-    color: white;
+    color: #1e1e1e;
     text-indent: 1rem;
 }
 
 .input-password::placeholder, .input-password:focus{
-    color: white;
+    color: #1e1e1e;
     text-indent: 1rem;
 }
 

@@ -1,1 +1,14 @@
-<h1>{{error.message}}</h1>
+<section class="error-container">
+    <img class="warning-icon" src="./assets//warning-icon.svg" alt="">
+    <div class="error-items">
+        <h1 class="error-code">{{error.status}}</h1>
+        <h2 class="error-title">{{error.message}}</h2>
+        <p class="error-description">La pagina que estas buscando no existe o ha sido movida</p>
+    </div>
+    <a class="home-button" href="/">
+        <img class="home-icon" src="./assets//home-icon.svg"
+            alt="home icon">Inicio
+    </a>
+</section>
+
+<link rel="stylesheet" href="./css/error.module.css">

@@ -1,0 +1,33 @@
+<section class="product-conteiner">
+    <div class="product-form">
+        <form action="http://localhost:8080/api/products/create" method="POST">
+            <div class="title">
+                <label for="title">Title for product</label>
+                <input class="input-title" type="text" name="title" placeholder="Title product">
+            </div>
+            <div class="description">
+                <label for="description">Description for product</label>
+                <input class="input-description" type="text" name="description" placeholder="Description product">
+            </div>
+            <div class="thumbnail">
+                <label for="">Thumbnail for product</label>
+                <input class="input-thumbnail" type="text" name="thumbnail" placeholder="thumbnail for product">
+            </div>
+            <div class="price">
+                <label for="price">Price for product</label>
+                <input class="input-price" type="number" name="price" placeholder="Price for product">
+            </div>
+            <div class="code">
+                <label for="code">Code for product</label>
+                <input class="input-code" type="text" name="code" placeholder="code for product">
+            </div>
+            <div class="stock">
+                <label for="stock">Stock for product</label>
+                <input class="input-stock" type="number" name="stock" placeholder="Stock for product">
+            </div>
+            <button class="product-buttom" type="submit">Create new product</button>
+        </form>
+    </div>
+</section>
+
+<link rel="stylesheet" href="./css/products.module.css">
