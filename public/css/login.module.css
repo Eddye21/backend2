@@ -19,6 +19,10 @@
     padding-bottom: 2rem;
 }
 
+.label-password, .label-email{
+    padding-left: 2rem;
+}
+
 .input-password, .input-email{
     margin-top: .5rem;
     width: 400px;
