@@ -1,6 +1,11 @@
 .warning-icon{
-    width: 95px;
-    height: 93px;
+    width: 200px;
+    height: 200px;
+}
+
+.forbidden-icon{
+    width: 200px;
+    height: 200px;
 }
 
 .error-container{
@@ -52,3 +57,4 @@
     fill: white;
     margin-right: .5rem;
 }
+
