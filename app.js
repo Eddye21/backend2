@@ -28,10 +28,7 @@ server.use(morgan("dev"))
 
 //Endpoint
 server.use("/", indexRouter)
-server.use((req ,res) => {
-    const error = {message: "Pagina no encontrada", status: 404}
-    res.status(404).render("error", {error})
-})
+server.use(errorHandler)
 
 //Server initialize 
 server.listen((PORT), connect)
