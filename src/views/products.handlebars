@@ -1,31 +1,40 @@
-<section class="product-conteiner">
+<section class="product-container">
     <div class="product-form">
+        <h1 class="product-title">Create Product</h1>
         <form action="http://localhost:8080/api/products/create" method="POST">
-            <div class="title">
-                <label for="title">Title for product</label>
-                <input class="input-title" type="text" name="title" placeholder="Title product">
+            <div class="item-container">
+                <div class="title">
+                    <label class="label-title" for="title">Title</label>
+                    <input class="input-title" type="text" name="title" placeholder="Title product">
+                </div>
+                <div class="description">
+                    <label class="label-description" for="description">Description</label>
+                    <input class="input-description" type="text" name="description" placeholder="Description product">
+                </div>
             </div>
-            <div class="description">
-                <label for="description">Description for product</label>
-                <input class="input-description" type="text" name="description" placeholder="Description product">
+            <div class="item-container">
+                <div class="thumbnail">
+                    <label class="label-thumbnail" for="">Thumbnail</label>
+                    <input class="input-thumbnail" type="text" name="thumbnail" placeholder="thumbnail for product">
+                </div>
+                <div class="price">
+                    <label class="label-price" for="price">Price</label>
+                    <input class="input-price" type="number" name="price" placeholder="Price for product">
+                </div>
             </div>
-            <div class="thumbnail">
-                <label for="">Thumbnail for product</label>
-                <input class="input-thumbnail" type="text" name="thumbnail" placeholder="thumbnail for product">
+            <div class="item-container">
+                <div class="code">
+                    <label class="label-code" for="code">Code</label>
+                    <input class="input-code" type="text" name="code" placeholder="code for product">
+                </div>
+                <div class="stock">
+                    <label class="label-stock" for="stock">Stock</label>
+                    <input class="input-stock" type="number" name="stock" placeholder="Stock for product">
+                </div>
             </div>
-            <div class="price">
-                <label for="price">Price for product</label>
-                <input class="input-price" type="number" name="price" placeholder="Price for product">
+            <div class="button-container">
+                <button class="create-button" type="submit">Create new product</button>
             </div>
-            <div class="code">
-                <label for="code">Code for product</label>
-                <input class="input-code" type="text" name="code" placeholder="code for product">
-            </div>
-            <div class="stock">
-                <label for="stock">Stock for product</label>
-                <input class="input-stock" type="number" name="stock" placeholder="Stock for product">
-            </div>
-            <button class="product-buttom" type="submit">Create new product</button>
         </form>
     </div>
 </section>
