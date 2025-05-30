@@ -1,17 +1,19 @@
-<section class="login-conteiner">
-    <div class="login-form">
+<section class="login-container">
+    <h1 class="login-title">Login</h1>
+    <div>
         <form action="http://localhost:8080/api/auth/login" method="post">
-            <div class="email">
+            <div class="login-item">
                 <label for="email">Email</label>
-                <input class="input-email" type="email" name="email" placeholder="johndoe@email.com">
+                <input class="input-email" type="email" name="email" placeholder="JohnDoe@gmail.com">
             </div>
-            <div class="password">
+            <div class="login-item">
                 <label for="password">Password</label>
-                <input class="input-password" type="password" name="password" placeholder="password">
+                <input class="input-password" type="password" name="password" placeholder="Password">
             </div>
-            <button class="login-buttom" type="submit">
-                Log In
-            </button>
+            <div class="button-container">
+                <button class="login-button" type="submit">Log In</button>
+                <a class="redirect-button" href="register">Register</a>
+            </div>
         </form>
     </div>
 </section>

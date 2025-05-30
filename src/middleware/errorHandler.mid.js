@@ -1,8 +1,6 @@
-const errorHandler = (err, req, res, next) => {
-    const error = err.message || "Server Error"
-    const statusCode = err.statusCode || 500
-    const { method, originalUrl: url} = req
-    res.status(statusCode).json({error, method, url})
+const errorHandler = (req, res) => {
+    const error = {message: "Pagina no encontrada", status: 404}
+    res.render("error", {error})
 }
 
 
