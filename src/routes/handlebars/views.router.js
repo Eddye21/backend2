@@ -4,7 +4,6 @@ import passport from "../../middleware/passport.mid.js"
 
 const viewsRouter = Router()
 
-//Callback
 
 const getProductsCb = async(req, res) => {
     try {
