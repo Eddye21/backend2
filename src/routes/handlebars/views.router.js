@@ -7,7 +7,7 @@ const viewsRouter = Router()
 
 const getProductsCb = async(req, res) => {
     try {
-        const products = await productManager.readAll()
+        let products = await productManager.readAll()
         return res.status(200).render("index", { products })
     } catch (error) {
         console.log(error.message)
@@ -23,13 +23,7 @@ const registerCb = (req, res) => {
 }
 
 const createProductsCb = async(req, res) => {
-    try {
-        const {data} = req.params
-        const products= await productManager.createOne(data)
-        res.render("products", {products})
-    } catch (error) {
-        console.log(error.message)
-    }
+    res.render("products")
 }
 
 const forbiddenCb = (req, res) => {

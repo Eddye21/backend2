@@ -9,6 +9,49 @@
 </head>
 
 <body>
+        <header>
+        <nav>
+            <div class="nav">
+                <div class="item-img">
+                    <a href="/">
+                        <img class="principal-icon" src="../assets//principal-icon.svg" alt="icon">
+                    </a>
+                </div>
+                <ul>
+                    <div class="item-container">
+                        <li><a class="home" href="/">Inicio</a></li>
+                        <li><a class="cart" href="/cart">Carrito</a></li>
+                        <div>
+                            <div class="dropdown">
+                                <p>Edit Users</p>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/api/users">Change Role</a>
+                                    <a class="dropdown-item" href="/api/users">Delete User</a>
+                                    <a class="dropdown-item" href="/api/users">Change Password</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dropdown">
+                                <p>Edit Products</p>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/create">Create</a>
+                                    <a class="dropdown-item" href="/update">Update</a>
+                                    <a class="dropdown-item" href="/delete">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-container-sesion">
+                        <li><a class="login" href="login">Iniciar Sesion</a></li>
+                        <div class="container">
+                            <li><a class="register" href="register">Registrarse</a></li>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
     {{{body}}}
 </body>
 
