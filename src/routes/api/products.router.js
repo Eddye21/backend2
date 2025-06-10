@@ -1,9 +1,6 @@
-import { Router } from "express";
 import passport from "../../middleware/passport.mid.js"
+import RouterHelper from "../../helpers/router.helper.js";
 import { productManager } from "../../data/managers/db/mongoDb.manager.js";
-
-const productRouter = Router()
-
 
 //Callback
 const getProductsCb = async (req, res, next) => {
@@ -43,8 +40,19 @@ const putProductCb = async (req, res, next) => {
 const optsForbidden = {session: false, failureRedirect: "/api/auth/forbidden"}
 
 //Endpoit
-productRouter.get("/", getProductsCb)
-productRouter.post("/create", passport.authenticate("admin", optsForbidden),postProductCb)
-productRouter.put("/update/:pid", passport.authenticate("admin", optsForbidden),putProductCb)
+
+class ProductRouter extends RouterHelper{
+    constructor(){
+        super()
+        this.init()
+    }
+    init = () => {
+        this.read("/", getProductsCb)
+        this.create("/create", passport.authenticate("admin", optsForbidden),postProductCb)
+        this.update("/update/:pid", passport.authenticate("admin", optsForbidden),putProductCb)
+    }
+}
+
+const productRouter = new ProductRouter().getRouter()
 
 export default productRouter
