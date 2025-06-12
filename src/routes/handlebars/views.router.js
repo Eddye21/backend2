@@ -1,43 +1,27 @@
 import { Router } from "express";
-import { productManager } from "../../data/managers/db/mongoDb.manager.js";
 import passport from "../../middleware/passport.mid.js"
+import { getProductsCb, loginCb, registerCb, createProductsCb, forbiddenCb } from "../../controllers/views.controller.js";
+import RouterHelper from "../../helpers/router.helper.js";
 
-const viewsRouter = Router()
 
+const optsForbidden = { session: false, failureRedirect: "/forbidden" }
 
-const getProductsCb = async(req, res) => {
-    try {
-        let products = await productManager.readAll()
-        return res.status(200).render("index", { products })
-    } catch (error) {
-        console.log(error.message)
+//Endpoit
+class ViewsRouter extends RouterHelper{
+    constructor(){
+        super()
+        this.init()
+    }
+
+    init = () => {
+        this.read("/", getProductsCb)
+        this.read("/login", loginCb)
+        this.read("/register", registerCb)
+        this.read("/create", passport.authenticate("admin", optsForbidden), createProductsCb)
+        this.read("/forbidden", forbiddenCb)
     }
 }
 
-const loginCb = (req, res) => {
-    res.render("login")
-};
-
-const registerCb = (req, res) => {
-    res.render("register")
-}
-
-const createProductsCb = async(req, res) => {
-    res.render("products")
-}
-
-const forbiddenCb = (req, res) => {
-    const error = {message: "Access denied", status: "403"}
-    res.render("forbidden", {error})
-}
-
-const optsForbidden = {session: false, failureRedirect: "/forbidden"}
-
-//Endpoit
-viewsRouter.get("/", getProductsCb)
-viewsRouter.get("/login", loginCb)
-viewsRouter.get("/register", registerCb)
-viewsRouter.get("/create", passport.authenticate("admin", optsForbidden),createProductsCb)
-viewsRouter.get("/forbidden", forbiddenCb)
+const viewsRouter = new ViewsRouter().getRouter()
 
 export default viewsRouter
