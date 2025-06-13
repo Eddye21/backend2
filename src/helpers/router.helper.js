@@ -1,13 +1,15 @@
 import {Router} from "express"
+import setupResponse from "../middleware/setupResponse.mid.js"
 
 class RouterHelper {
     constructor(){
         this.router = Router()
+        this.use([setupResponse])
     }
     getRouter = () => this.router
     applyMiddlewares = (middlewares) => middlewares.map(mid => async (req, res, next) => {
         try {
-            await mid (req, res, next)
+            await mid(req, res, next)
         } catch (error) {
             next(error)
         }

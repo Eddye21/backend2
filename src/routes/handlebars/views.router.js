@@ -1,4 +1,3 @@
-import { Router } from "express";
 import passport from "../../middleware/passport.mid.js"
 import { getProductsCb, loginCb, registerCb, createProductsCb, forbiddenCb } from "../../controllers/views.controller.js";
 import RouterHelper from "../../helpers/router.helper.js";
